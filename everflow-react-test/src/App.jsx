@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '700px', margin: '0 auto', padding: '20px', color: '#2c3e50' }}>
-      
+      <EverflowTracker />
       {/* 🚀 Mount the headless tracker silently */}
       <EverflowTracker 
         targetDomain={targetDomain} 

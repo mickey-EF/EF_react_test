@@ -2,21 +2,10 @@ import React, { useState } from 'react';
 import EverflowTracker from './components/EverflowTracker';
 
 function App() {
-  const [trackerLog, setTrackerLog] = useState('Booting up sandbox...');
-  
-  // We'll target this mock product domain for our cross-site test
-  const targetDomain = "your-brand-product-page.com"; 
-  const advertiserId = "12345"; 
 
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', maxWidth: '700px', margin: '0 auto', padding: '20px', color: '#2c3e50' }}>
       <EverflowTracker />
-      {/* 🚀 Mount the headless tracker silently */}
-      <EverflowTracker 
-        targetDomain={targetDomain} 
-        advertiserId={advertiserId} 
-        onLog={(msg) => setTrackerLog(msg)} 
-      />
 
       <header style={{ borderBottom: '2px solid #ecf0f1', paddingBottom: '15px', marginBottom: '30px' }}>
         <div style={{ fontWeight: 'bold', fontSize: '26px', color: '#e74c3c' }}>⚡ TechVibe Magazine</div>
@@ -61,13 +50,6 @@ function App() {
         </div>
       </main>
 
-      {/* 🖥️ Live On-Screen Debug Console */}
-      <div style={{ background: '#2c3e50', color: '#ecf0f1', padding: '20px', borderRadius: '6px', fontFamily: 'monospace', marginTop: '40px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
-        <div style={{ color: '#e74c3c', fontWeight: 'bold', marginBottom: '8px', borderBottom: '1px dashed #34495e', paddingBottom: '5px' }}>
-          [REACT SANDBOX LOGS]
-        </div>
-        <div style={{ fontSize: '13px', lineHeight: '1.5' }}>{trackerLog}</div>
-      </div>
     </div>
   );
 }

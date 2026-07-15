@@ -2,9 +2,30 @@ import { useEffect } from 'react';
 
 export default function EverflowTracker() {
   useEffect(() => {
-    const { EF } = window;
+    if (window.EF) {
+      runEverflowTracking();
+      return;
+    }
 
-  if (EF.urlParameter("affid2")) {
+    let script = document.querySelector('script[src*="clik2trk.com"]');
+
+    if (!script) {
+      // Create the script tag programmatically
+      script = document.createElement('script');
+      script.src = 'https://www.clik2trk.com/scripts/main.js';
+      script.type = 'text/javascript';
+      document.head.appendChild(script);
+    }
+
+    script.onload = () => {
+      runEverflowTracking();
+    };
+
+    function runEverflowTracking() {
+      const { EF } = window;
+      if (!EF) return;
+
+        if (EF.urlParameter("affid2")) {
     EF.click({
       tracking_domain: "https://www.click5trk.com",
       offer_id: EF.urlParameter("oid2"),
@@ -15,6 +36,7 @@ export default function EverflowTracker() {
       sub4: EF.urlParameter("sub4"),
       sub5: EF.urlParameter("sub5"),
     }).then(function (transaction_id) {
+          console.log('affid2 exists in url params, tid for partner: '+ transaction_id)
       EF.click({
         tracking_domain: "https://www.clik2trk.com",
         offer_id: EF.urlParameter("oid"),
@@ -43,8 +65,11 @@ export default function EverflowTracker() {
       transaction_id: EF.urlParameter("_ef_transaction_id"),
     });
   }
-    
-  },);
 
+    };
+
+
+    
+  }, []);
   return null; 
 }

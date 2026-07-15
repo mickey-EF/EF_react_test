@@ -24,7 +24,7 @@ function App() {
           <p>The active noise cancellation on these headphones is unmatched.</p>
           {/* Outbound Link destined for our target domain */}
           <a 
-            href={`https://${targetDomain}/checkout/aeropods`} 
+            href={`https://www.test.com/checkout/aeropods`} 
             style={{ display: 'inline-block', background: '#2ecc71', color: 'white', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px', fontWeight: 'bold' }}
           >
             Check Price &rarr;
@@ -36,7 +36,7 @@ function App() {
           <h3>2. ChargeGrip Magnetic Power Bank</h3>
           <p>Supercharge your device in under 20 minutes wire-free.</p>
           <a 
-            href={`https://${targetDomain}/checkout/chargegrip?discount=true`} 
+            href={`https://www.test.com/checkout/chargegrip?discount=true`} 
             style={{ display: 'inline-block', background: '#2ecc71', color: 'white', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px', fontWeight: 'bold' }}
           >
             View Deal Online &rarr;

@@ -17,7 +17,6 @@ export default function EverflowTracker() {
     // If EF JS SDK exists, calls function runEverflowTracking
     if (window.EF) {
       runEverflowTracking();
-      return;
     } else {
     // Waits for script to load to calls function runEverflowTracking
       script.onload = runEverflowTracking;

@@ -43,11 +43,6 @@ function App() {
           </a>
         </div>
 
-        {/* Control Link (Not matching target domain) */}
-        <div style={{ marginTop: '20px', fontSize: '14px', color: '#95a5a6' }}>
-          <span>Regular link (Should NOT be tracked): </span>
-          <a href="https://google.com" style={{ color: '#3498db' }}>Go to Google</a>
-        </div>
       </main>
 
     </div>
